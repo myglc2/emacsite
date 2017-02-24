@@ -1,6 +1,6 @@
 #+INCLUDE: ./header.org
 
-* emacsite -- easy [[https://www.gnu.org/software/emacs/][Emacs]] web sites
+* [[https://myglc2.github.io/emacsite/][emacsite]] -- easy [[https://www.gnu.org/software/emacs/][Emacs]] web sites
 ** Features
 - Mobile-first [[https://getbootstrap.com/][Bootstrap]] design
 - Easy [[http://orgmode.org][Org-mode]] markup
@@ -41,8 +41,10 @@ Q: Why doesn't ~make preview~ open the site or run the browser I want?\\
 A: Please edit ~makefile~ and set ~BROWSER :=~ to run the browser you like
 
 Q: Why am I getting 404's\\
-A: Sometimes GitHub fails to post the site. Try pushing it again with
-~touch index.org && make gh~
+A: For unknown reasons GitHub sometimes fails to update the site or a
+page. You can push the whole site again with ~touch index.org && make
+gh~. If just one page is affected, you can do ~ git checkout
+gh-pages~, make a trivial change, commit, and push.
 
 Q: How do I change the code highlight colors? \\
 A: Try ~M-x load-theme ?~
