@@ -1,0 +1,6 @@
+#+NAME: buttons
+#+BEGIN_HTML
+<a href="../markup/literal.html"><button type="button" class="btn btn-primary"> Page </button></a>
+<a href="../markup/literal-markup.html"><button type="button" class="btn btn-primary"> Markup </button></a>
+<a href="http://orgmode.org/manual/Literal-examples.html"><button type="button" class="btn btn-primary"> Doc </button></a>
+#+END_HTML

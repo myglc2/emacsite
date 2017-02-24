@@ -1,0 +1,6 @@
+#+NAME: buttons
+#+BEGIN_HTML
+<a href="../markup/images.html"><button type="button" class="btn btn-primary"> Page </button></a>
+<a href="../markup/images-markup.html"><button type="button" class="btn btn-primary"> Markup </button></a>
+<a href="http://orgmode.org/manual/Images-in-HTML-export.html"><button type="button" class="btn btn-primary"> Doc </button></a>
+#+END_HTML

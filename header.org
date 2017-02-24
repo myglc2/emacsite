@@ -1,0 +1,82 @@
+# Site-wide options
+#+OPTIONS: ^:nil toc:nil H:4 num:nil html-postamble:nil
+
+# Suppress page title default to page name
+#+TITLE:
+
+#+NAME: menu
+#+BEGIN_SRC emacs-lisp :exports results :results html
+  ;;;; emacs lisp code to generate bootstrap menu
+  ;; call 'git remote origin' to determine GitHub username, reponame &
+  ;; page & repo URLs
+  (setq github-user-repo
+        (split-string (shell-command-to-string "git config --get remote.origin.url")
+                      "https:\\|github.com\\|git@github.com:\\|\/\\|\.git\\|[\n]" t ))
+  (setq github-user (car github-user-repo))
+  (setq github-repo (cadr github-user-repo))
+  (setq github-repo-URL
+        (concat "https://github.com/" github-user "/" github-repo ))
+  (setq github-pages-URL
+        (concat "https://" github-user ".github.io/" github-repo "/"))
+  ;; specify menu links relative to repo "root" = "./"
+  (setq
+   menu
+   (concat
+    "<nav class=\"navbar navbar-default\">
+      <div class=\"container-fluid\">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class=\"navbar-header\">
+              <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                  <span class=\"sr-only\">Toggle navigation</span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+              </button>
+              <a class=\"navbar-brand\" href=\"" github-pages-URL "\">" github-repo "</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+              <ul class=\"nav navbar-nav\">
+                  <li class=\"dropdown\">
+                      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">About <span class=\"caret\"></span></a>
+                      <ul class=\"dropdown-menu\">
+                          <li><a href=\" ./README.html \">README</a></li>
+                          <li><a href=\" ./about/gnumake.html \">Site Automation</a></li>
+                          <li><a href=\" ./about/menus.html \">Menu Generation</a></li>
+                      </ul>
+                  </li>
+                  <li class=\"dropdown\">
+                      <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Markup <span class=\"caret\"></span></a>
+                      <ul class=\"dropdown-menu\">
+                          <li><a href=\" ./markup/code-markup.html \">Code</a></li>
+                          <li><a href=\" ./markup/images-markup.html \">Images</a></li>
+                          <li><a href=\" ./markup/headlines-markup.html \">Headlines</a></li>
+                          <li><a href=\" ./markup/inline-markup.html \">Inline</a></li>
+                          <li><a href=\" ./markup/lists-markup.html \">Lists</a></li>
+                          <li><a href=\" ./markup/literal-markup.html \">Literal</a></li>
+                          <li><a href=\" ./markup/paragraphs-markup.html \">Paragraphs</a></li>
+                          <li><a href=\" ./markup/tables-markup.html \">Tables</a></li>
+                      </ul>
+                  </li>
+                </ul>
+            <ul class=\"nav navbar-nav navbar-right\">
+              <li><a href=\"./todo.html\">Todo</a></li>
+              <li><a href=\"" github-repo-URL "\">GitHub</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>"
+              ))
+  ;; adjust menu links for the including file relative directory
+  ;; NOTE: reldir is set in makefile emacsclient call
+  (if (or
+       (not (boundp 'reldir))   ;; if RELDIR is not set
+       (string= reldir ".")     ;; if site root
+       ) (concat menu)          ;; noop
+    (replace-regexp-in-string
+     ;; replace "./"'s with appropriate # of "../"'s
+     (concat "\\\./")
+     (mapconcat (function (lambda (x) (quote "../")))
+                (split-string reldir "/") "")
+     menu))
+  #+END_SRC

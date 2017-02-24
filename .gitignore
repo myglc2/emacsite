@@ -1,0 +1,4 @@
+# html pages
+*.html*
+# the gh-pages sentinen
+.gh-update

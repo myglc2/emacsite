@@ -1,0 +1,18 @@
+#+INCLUDE: ../header.org
+* Literal
+#+INCLUDE: "./literal-buttons.org"
+
+Here is an example:
+#+BEGIN_EXAMPLE
+Some example from a text file.
+ #+END_EXAMPLE
+
+Here is another one:
+: Some example from a text file.
+
+Here is a
+#+BEGIN_SRC emacs-lisp
+  (defun org-xor (a b)
+    "Exclusive or."
+    (if a (not b) b))
+#+END_SRC

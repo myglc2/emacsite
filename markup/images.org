@@ -1,0 +1,6 @@
+#+INCLUDE: ../header.org
+* Images
+#+INCLUDE: "./images-buttons.org"
+
+#+CAPTION: "Angular Momentum" Cartoon from: http://xkcd.com/162/ The work is licensed under a [[http://creativecommons.org/licenses/by-nc/2.5/][Creative Commons Attribution-NonCommercial 2.5 License.]] and no changes have been made.
+[[./angular_momentum.jpg]]

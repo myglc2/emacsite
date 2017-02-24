@@ -1,0 +1,9 @@
+#+INCLUDE: ../header.org
+* Inline
+#+INCLUDE: "./inline-buttons.org"
+
+You can make words *bold*, /italic/, _underlined_, =code= and
+~verbatim~, and +strike-through+.
+
+You can use special characters: \alpha, \beta and \gamma or insert a
+link to the [[http://orgmode.org/][org-mode]] homepage.

@@ -1,0 +1,32 @@
+#+INCLUDE: ../header.org
+* Code
+#+INCLUDE: "./code-buttons.org"
+
+
+You can display code and/or the results of code execution for many
+[[http://orgmode.org/manual/Languages.html][languages]]. 
+
+Define an =add= code block:
+#+NAME: add
+#+BEGIN_SRC emacs-lisp
+  (+ 1 2 3 4)
+  #+END_SRC
+
+Insert the result of calling the =add= code block:
+#+CALL: add()
+
+Define a =reverse= function:
+#+BEGIN_SRC emacs-lisp
+  (defun reverse (list)
+    (let (value)
+      (dolist (elt list value)
+        (setq value (cons elt value)))))
+  #+END_SRC
+
+Insert a block that uses =reverse= and displays the results:
+#+BEGIN_SRC emacs-lisp :exports both :results value
+(reverse (list 1 2 3 4))
+  #+END_SRC
+
+Call the =menu= code block in =header.org= to insert another copy of the menu:
+#+CALL: menu() :results html

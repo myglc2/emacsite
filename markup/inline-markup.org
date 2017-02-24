@@ -1,0 +1,5 @@
+#+INCLUDE: ../header.org
+* Inline
+#+INCLUDE: "./inline-buttons.org"
+
+#+INCLUDE: "./inline.org" src org

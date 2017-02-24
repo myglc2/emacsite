@@ -1,0 +1,5 @@
+#+INCLUDE: ../header.org
+* Tables
+#+INCLUDE: "./tables-buttons.org"
+
+#+INCLUDE: "./tables.org" src org

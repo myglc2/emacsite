@@ -1,0 +1,61 @@
+#+INCLUDE: ./header.org
+
+* emacsite -- easy [[https://www.gnu.org/software/emacs/][Emacs]] web sites
+** Features
+- Mobile-first [[https://getbootstrap.com/][Bootstrap]] design
+- Easy [[http://orgmode.org][Org-mode]] markup
+- [[./about/gnumake.org][GNU Make site automation]]
+- [[./about/menus.org][Elisp menu generation]]
+- Free [[https://pages.github.com][GitHub Pages]] hosting
+- No [[http://orgmode.org/manual/Publishing.html][Org Mode Publishing]]
+- No [[https://jekyllrb.com][Jekyll]]
+
+** Quick start
+To create https://github.com/ ~myname/mysite~:
+| Clone   | ~git clone https://github.com/myglc2/emacsite.git mysite && cd $_ && make repo~ |
+| Start   | ~make start~                                                                    |
+| Build   | ~make~                                                                          |
+| Preview | ~make preview~                                                                  |
+| Commit  | ~make commit~                                                                   |
+| Publish | ~make gh~                                                                       |
+| Finish  | ~make stop~                                                                     |
+
+** Embedded software
++ [[https://github.com/marsmining/ox-twbs][ox-twbs.el]] [[https://getbootstrap.com/][Bootstrap]] export by [[https://github.com/marsmining][Brandon van Beekum]]
++ [[https://www.emacswiki.org/emacs/Htmlize][htmlize.el]] decorated font buffer export by [[http://www.xemacs.org/People/hrvoje.niksic/][Hrvoje Niksic]]
+
+** Required software
+| Item      | GuixSD 0.12.0 | macOS 10.12.3 + brew.sh | Debian 8 |
+|-----------+---------------+-------------------------+----------|
+| GNU Emacs |        25.1.1 |                  25.1.1 |   24.4.1 |
+| Org-mode  |        8.2.10 |                  8.2.10 |   8.2.10 |
+| GNU Make  |           4.2 |                    3.81 |      4.0 |
+| curl      |        7.52.1 |                  7.51.0 |   7.43.0 |
+| Git       |        2.11.1 |                  2.10.1 |    2.4.3 |
+
+** FAQ
+Q: How does it work?\\
+A: Please read ~makefile~ and ~header.org~
+
+Q: Why doesn't ~make preview~ open the site or run the browser I want?\\
+A: Please edit ~makefile~ and set ~BROWSER :=~ to run the browser you like
+
+Q: Why am I getting 404's\\
+A: Sometimes GitHub fails to post the site. Try pushing it again with
+~touch index.org && make gh~
+
+Q: How do I change the code highlight colors? \\
+A: Try ~M-x load-theme ?~
+
+Q: How do I delete a <page>? \\
+A: Delete ~<page>.org~ and remove references to ~<page>.html~ from the
+menu section of ~header.org~ and remove references, if any, to
+~<page>.org~ from ~makefile~
+
+Q: How do I add a <newpage>? \\
+A: Create ~<newpage>.org~ and add references to ~<newpage>.html~ in
+the menu section of ~header.org~. If ~newpage.org~ includes .org files
+besides header.org, (e.g. ~myinclude.org~) then add a rule to the makefile
+like
+
+: newpage.html: myinclude.org

@@ -1,0 +1,6 @@
+#+NAME: buttons
+#+BEGIN_HTML
+<a href="../markup/code.html"><button type="button" class="btn btn-primary"> Page </button></a>
+<a href="../markup/code-markup.html"><button type="button" class="btn btn-primary"> Markup </button></a>
+<a href="http://orgmode.org/manual/Working-With-Source-Code.html"><button type="button" class="btn btn-primary"> Doc </button></a>
+#+END_HTML

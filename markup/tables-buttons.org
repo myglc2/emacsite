@@ -1,0 +1,6 @@
+#+NAME: buttons
+#+BEGIN_HTML
+<a href="../markup/tables.html"><button type="button" class="btn btn-primary"> Page </button></a>
+<a href="../markup/tables-markup.html"><button type="button" class="btn btn-primary"> Markup </button></a>
+<a href="http://orgmode.org/manual/Built_002din-table-editor.html#Built_002din-table-editor><button type="button" class="btn btn-primary"> Doc </button></a>
+#+END_HTML
