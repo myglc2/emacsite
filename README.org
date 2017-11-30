@@ -11,7 +11,7 @@
 - No [[https://jekyllrb.com][Jekyll]]
 
 ** Quick start
-To create https://github.com/ ~myname/mysite~:
+To create https://github.com/~yourname/yoursite~
 | Clone   | ~git clone https://github.com/myglc2/emacsite.git mysite && cd $_ && make repo~ |
 | Start   | ~make start~                                                                    |
 | Build   | ~make~                                                                          |
