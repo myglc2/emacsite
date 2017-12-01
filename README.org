@@ -11,16 +11,16 @@
 - No [[https://jekyllrb.com][Jekyll]]
 
 ** Quick start
-To create https://github.com/~yourname/yoursite~
-| Clone   | ~git clone https://github.com/myglc2/emacsite.git mysite && cd $_ && make repo~ |
-| Start   | ~make start~                                                                    |
-| Build   | ~make~                                                                          |
-| Preview | ~make preview~                                                                  |
-| Commit  | ~make commit~                                                                   |
-| Publish | ~make gh~                                                                       |
-| Finish  | ~make stop~                                                                     |
+To create your own site at https://github.com/ ~yourname/yoursite~
+| Clone   | ~git clone https://github.com/myglc2/emacsite.git yoursite && cd $_ && make repo~ |
+| Start   | ~make start~                                                                      |
+| Build   | ~make~                                                                            |
+| Preview | ~make preview~                                                                    |
+| Commit  | ~make commit~                                                                     |
+| Publish | ~make gh~                                                                         |
+| Finish  | ~make stop~                                                                       |
 
-** Embedded software
+** Embedded software by others
 + [[https://github.com/marsmining/ox-twbs][ox-twbs.el]] [[https://getbootstrap.com/][Bootstrap]] export by [[https://github.com/marsmining][Brandon van Beekum]]
 + [[https://www.emacswiki.org/emacs/Htmlize][htmlize.el]] decorated font buffer export by [[http://www.xemacs.org/People/hrvoje.niksic/][Hrvoje Niksic]]
 
