@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2017-12-01 Fri 07:16 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<style>body { margin-bottom: 0px; }</style><script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-12"><h1 class="title"></h1>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://myglc2.github.io/emacsite/">emacsite</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=" ./README.html ">README</a></li>
+                        <li><a href=" ./about/gnumake.html ">Site Automation</a></li>
+                        <li><a href=" ./about/menus.html ">Menu Generation</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markup <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=" ./markup/code-markup.html ">Code</a></li>
+                        <li><a href=" ./markup/images-markup.html ">Images</a></li>
+                        <li><a href=" ./markup/headlines-markup.html ">Headlines</a></li>
+                        <li><a href=" ./markup/inline-markup.html ">Inline</a></li>
+                        <li><a href=" ./markup/lists-markup.html ">Lists</a></li>
+                        <li><a href=" ./markup/literal-markup.html ">Literal</a></li>
+                        <li><a href=" ./markup/paragraphs-markup.html ">Paragraphs</a></li>
+                        <li><a href=" ./markup/tables-markup.html ">Tables</a></li>
+                    </ul>
+                </li>
+              </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./todo.html">Todo</a></li>
+            <li><a href="https://github.com/myglc2/emacsite">GitHub</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><a href="https://myglc2.github.io/emacsite/">emacsite</a> &#x2013; easy <a href="https://www.gnu.org/software/emacs/">Emacs</a> web sites</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Features</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Mobile-first <a href="https://getbootstrap.com/">Bootstrap</a> design
+</li>
+<li>Easy <a href="http://orgmode.org">Org-mode</a> markup
+</li>
+<li><a href="./about/gnumake.html">GNU Make site automation</a>
+</li>
+<li><a href="./about/menus.html">Elisp menu generation</a>
+</li>
+<li>Free <a href="https://pages.github.com">GitHub Pages</a> hosting
+</li>
+<li>No <a href="http://orgmode.org/manual/Publishing.html">Org Mode Publishing</a>
+</li>
+<li>No <a href="https://jekyllrb.com">Jekyll</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Quick start</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+To create your own site at <a href="https://github.com/">https://github.com/</a> <code>yourname/yoursite</code>
+</p>
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-left">Clone</td>
+<td class="text-left"><code>git clone https://github.com/myglc2/emacsite.git yoursite &amp;&amp; cd $_ &amp;&amp; make repo</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Start</td>
+<td class="text-left"><code>make start</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Build</td>
+<td class="text-left"><code>make</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Preview</td>
+<td class="text-left"><code>make preview</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Commit</td>
+<td class="text-left"><code>make commit</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Publish</td>
+<td class="text-left"><code>make gh</code></td>
+</tr>
+
+<tr>
+<td class="text-left">Finish</td>
+<td class="text-left"><code>make stop</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Embedded software by others</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><a href="https://github.com/marsmining/ox-twbs">ox-twbs.el</a> <a href="https://getbootstrap.com/">Bootstrap</a> export by <a href="https://github.com/marsmining">Brandon van Beekum</a>
+</li>
+<li><a href="https://www.emacswiki.org/emacs/Htmlize">htmlize.el</a> decorated font buffer export by <a href="http://www.xemacs.org/People/hrvoje.niksic/">Hrvoje Niksic</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">Required software</h3>
+<div class="outline-text-3" id="text-1-4">
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="right">
+
+<col  class="right">
+
+<col  class="right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="text-left">Item</th>
+<th scope="col" class="text-right">GuixSD 0.12.0</th>
+<th scope="col" class="text-right">macOS 10.12.3 + brew.sh</th>
+<th scope="col" class="text-right">Debian 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">GNU Emacs</td>
+<td class="text-right">25.1.1</td>
+<td class="text-right">25.1.1</td>
+<td class="text-right">24.4.1</td>
+</tr>
+
+<tr>
+<td class="text-left">Org-mode</td>
+<td class="text-right">8.2.10</td>
+<td class="text-right">8.2.10</td>
+<td class="text-right">8.2.10</td>
+</tr>
+
+<tr>
+<td class="text-left">GNU Make</td>
+<td class="text-right">4.2</td>
+<td class="text-right">3.81</td>
+<td class="text-right">4.0</td>
+</tr>
+
+<tr>
+<td class="text-left">curl</td>
+<td class="text-right">7.52.1</td>
+<td class="text-right">7.51.0</td>
+<td class="text-right">7.43.0</td>
+</tr>
+
+<tr>
+<td class="text-left">Git</td>
+<td class="text-right">2.11.1</td>
+<td class="text-right">2.10.1</td>
+<td class="text-right">2.4.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">FAQ</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Q: How does it work?<br >
+A: Please read <code>makefile</code> and <code>header.org</code>
+</p>
+
+<p>
+Q: Why doesn't <code>make preview</code> open the site or run the browser I want?<br >
+A: Please edit <code>makefile</code> and set <code>BROWSER :=</code> to run the browser you like
+</p>
+
+<p>
+Q: Why am I getting 404's<br >
+A: For unknown reasons GitHub sometimes fails to update the site or a
+page. You can push the whole site again with <code>touch index.org &amp;&amp; make
+gh</code>. If just one page is affected, you can do ~ git checkout
+gh-pages~, make a trivial change, commit, and push.
+</p>
+
+<p>
+Q: How do I change the code highlight colors? <br >
+A: Try <code>M-x load-theme ?</code>
+</p>
+
+<p>
+Q: How do I delete a &lt;page&gt;? <br >
+A: Delete <code>&lt;page&gt;.org</code> and remove references to <code>&lt;page&gt;.html</code> from the
+menu section of <code>header.org</code> and remove references, if any, to
+<code>&lt;page&gt;.org</code> from <code>makefile</code>
+</p>
+
+<p>
+Q: How do I add a &lt;newpage&gt;? <br >
+A: Create <code>&lt;newpage&gt;.org</code> and add references to <code>&lt;newpage&gt;.html</code> in
+the menu section of <code>header.org</code>. If <code>newpage.org</code> includes .org files
+besides header.org, (e.g. <code>myinclude.org</code>) then add a rule to the makefile
+like
+</p>
+
+<pre class="example">
+newpage.html: myinclude.org
+</pre>
+</div>
+</div>
+</div>
+</div></div></div>
+</body>
+</html>

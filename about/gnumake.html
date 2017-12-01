@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title></title>
+<!-- 2017-12-01 Fri 07:11 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<style>body { margin-bottom: 0px; }</style><script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-12"><h1 class="title"></h1>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://myglc2.github.io/emacsite/">emacsite</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=" ../README.html ">README</a></li>
+                        <li><a href=" ../about/gnumake.html ">Site Automation</a></li>
+                        <li><a href=" ../about/menus.html ">Menu Generation</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Markup <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href=" ../markup/code-markup.html ">Code</a></li>
+                        <li><a href=" ../markup/images-markup.html ">Images</a></li>
+                        <li><a href=" ../markup/headlines-markup.html ">Headlines</a></li>
+                        <li><a href=" ../markup/inline-markup.html ">Inline</a></li>
+                        <li><a href=" ../markup/lists-markup.html ">Lists</a></li>
+                        <li><a href=" ../markup/literal-markup.html ">Literal</a></li>
+                        <li><a href=" ../markup/paragraphs-markup.html ">Paragraphs</a></li>
+                        <li><a href=" ../markup/tables-markup.html ">Tables</a></li>
+                    </ul>
+                </li>
+              </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../todo.html">Todo</a></li>
+            <li><a href="https://github.com/myglc2/emacsite">GitHub</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Site Automation</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Site creation, rebuild, and publishing are managed by this <a href="https://www.gnu.org/software/make/">GNU Make</a> <code>makefile</code> <a href="https://www.gnu.org/software/make/manual/make.html#Quick-Reference">(Make Doc)</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-makefile"><span style="color: #a0522d;">SHELL</span>  := $(<span style="color: #a0522d;">shell</span> which bash)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Copyright (C) 2017 George Clemmer</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Author: George Clemmer myglc2 at gmail dot com</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Keywords: emacs, github pages, orgmode, org-mode, bootstrap</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">This program is free software; you can redistribute it and/or modify</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">it under the terms of the GNU General Public License as published by</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">the Free Software Foundation; either version 2, or (at your option)</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">any later version.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">This program is distributed in the hope that it will be useful,</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">GNU General Public License for more details.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">You should have received a copy of the GNU General Public License</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">along with this program; see the file COPYING.  If not, write to the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Free Software Foundation, Inc., 59 Temple Place - Suite 330,</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Boston, MA 02111-1307, USA.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Commentary:</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">emacsite -- easy Emacs web sites</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Please also see README.org.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">emacsite uses GNU Make and GNU Emacs to automate the creation of web</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">sites on GitHub.  Simple 'make' commands create a repo, build the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">site, and publish it to GitHub Pages.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Make builds the site by running an Emacs server and using</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">emacsclient to request HTML export of '.org' page source files.  'Org</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">mode' markup in these files controls content display.  'ox-twbs.el',</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">which uses the Bootstrap front-end framework to produce mobile first</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">responsive sites, is used to export the pages to HTML.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The server is started with 'make start'.  Subsequent 'make' commands</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">may be issued using 'M-x shell make', 'M-x eshell make', or 'M-x</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">compile' from within the Emacs server or from another emacs instance</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">or from the command line.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Source files may be edited using the Emacs server, another instance</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">of emacs, or a different editor altogether.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The site may be previewed locally with 'make preview'. A change may</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">be committed with 'make commit', and published to GitHub with 'make</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">gh'. Finally the emacs server may be killed with 'make stop'.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Menus are generated by including into a page's source the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">'header.org' file that contains the Emacs Lisp 'menu' code block</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">that generates bootstrap menus.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Emacs 'Font Lock' determines the colors and faces used to display</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">code and 'ox-twbs.el' uses 'htmlize.el' to produce WYSIWYG export of</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">such code to HTML.   However, when, as is typically the case, the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Emacs server is run as a daemon or in batch mode, font lock is not</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">active and code is exported in black and white.  To overcome this,</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Emacs is started with a GUI and switched to be a server.  This causes</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">font lock to be active, produces WYSIWYG code export, and allows the</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">appearance of exported code to be customized by loading an Emacs</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">'Custom Theme'</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">The markup menu and sub-directory provide exemplar Org mode markup</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">and bootstrap button automation.</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">To increase reproducibility, 'ox-twbs.el' and 'htmlize.el' sources</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">are provided and loaded.</span>
+
+<span style="color: #a0522d;">REMOTE</span> := github.com
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">for debugging ...</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">... to print all $(</span><span style="color: #a0522d;">warning</span><span style="color: #b22222;"> ...)'s</span>
+<span style="color: #b22222;">#     </span><span style="color: #b22222;">DEBUG=1 make:</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">... to print the value of SYMBOL</span>
+<span style="color: #b22222;">#     </span><span style="color: #b22222;">make print-&lt;SYMBOL&gt;&gt;</span>
+<span style="color: #0000ff;">print-%</span>:
+        <span style="color: #228b22;">@</span>echo <span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span> = $(<span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span>)
+        <span style="color: #228b22;">@</span>echo <span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span>\'s origin is $(<span style="color: #a0522d;">origin</span> <span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span>)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">ignore default GNU suffixes</span>
+<span style="color: #0000ff;">.SUFFIXES</span>:
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">select a browser</span>
+<span style="color: #a0522d;">UNAME</span>  := $(<span style="color: #a0522d;">shell</span> uname)
+ifeq ($(<span style="color: #a0522d;">UNAME</span>),Linux)
+<span style="color: #a0522d;">BROWSER</span> := $(<span style="color: #a0522d;">firstword</span> \
+$(<span style="color: #a0522d;">shell</span> which chromium 2&gt; /dev/null) \
+$(<span style="color: #a0522d;">shell</span> which icecat 2&gt; /dev/null) \
+$(<span style="color: #a0522d;">shell</span> which conkeror 2&gt; /dev/null)\
+)
+else ifeq ($(<span style="color: #a0522d;">UNAME</span>),Darwin)
+<span style="color: #a0522d;">BROWSER</span> := open -a Google\ Chrome --args --allow-file-access-from-files
+<span style="color: #a0522d;">BROWSER</span> := open -a Firefox.app
+<span style="color: #a0522d;">BROWSER</span> := open -a Safari
+endif
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> BROWSER: $(<span style="color: #a0522d;">BROWSER</span>)),)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">determine URL, user and repo name from 'git remote origin'</span>
+<span style="color: #a0522d;">GITHUB-URL</span> := $(<span style="color: #a0522d;">subst</span> .git,,$(<span style="color: #a0522d;">shell</span> git config --get remote.origin.url))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> GITHUB-URL $(<span style="color: #a0522d;">GITHUB-URL</span>)),)
+<span style="color: #a0522d;">GITHUB-USR-REPO</span> := $(<span style="color: #a0522d;">subst</span> git@github.com:,,$(<span style="color: #a0522d;">GITHUB-URL</span>))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> GITHUB-USR-REPO $(<span style="color: #a0522d;">GITHUB-USR-REPO</span>)),)
+<span style="color: #a0522d;">GITHUB-USR</span> := $(<span style="color: #a0522d;">firstword</span> $(<span style="color: #a0522d;">subst</span> /, ,$(<span style="color: #a0522d;">GITHUB-USR-REPO</span>)))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> GITHUB-USR $(<span style="color: #a0522d;">GITHUB-USR</span>)),)
+<span style="color: #a0522d;">GITHUB-REPO</span> := $(<span style="color: #a0522d;">lastword</span> $(<span style="color: #a0522d;">subst</span> /, ,$(<span style="color: #a0522d;">GITHUB-USR-REPO</span>)))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> GITHUB-REPO $(<span style="color: #a0522d;">GITHUB-REPO</span>)),)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">Org-mode page sources</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">org files</span>
+<span style="color: #a0522d;">ORGFILES</span> := $(<span style="color: #a0522d;">shell</span> find . -maxdepth 3 -name <span style="color: #8b2252;">"*.org"</span>)
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> ORGFILES: $(<span style="color: #a0522d;">ORGFILES</span>)),)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">HTML page targets</span>
+<span style="color: #a0522d;">HTMLxORG</span> := $(<span style="color: #a0522d;">addsuffix</span> .html,$(<span style="color: #a0522d;">basename</span> $(<span style="color: #a0522d;">ORGFILES</span>)))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> HTMLxORG: $(<span style="color: #a0522d;">HTMLxORG</span>)),)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">make the site</span>
+<span style="color: #0000ff;">.PHONY</span>: all
+<span style="color: #0000ff;">all</span>: pages
+        <span style="color: #0000ff;">echo To preview, open</span>: $(<span style="color: #a0522d;">PWD</span>)/index.html
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">preview the site locally</span>
+<span style="color: #0000ff;">.PHONY</span>: preview
+<span style="color: #0000ff;">preview</span>: pages
+        $(<span style="color: #a0522d;">BROWSER</span>) $(<span style="color: #a0522d;">PWD</span>)/index.html &amp;
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">export all .org files to .html</span>
+<span style="color: #0000ff;">.PHONY</span>: pages
+<span style="color: #0000ff;">pages</span>: $(<span style="color: #a0522d;">HTMLxORG</span>)
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">ensure we are on master</span>
+<span style="color: #a0522d;">ONMASTER</span> = if [ <span style="color: #8b2252;">"$$(git rev-parse --abbrev-ref HEAD)"</span> != <span style="color: #8b2252;">"master"</span> ]; then echo; echo <span style="color: #8b2252;">"*** You are on '$$(git rev-parse --abbrev-ref HEAD)' branch"</span> ; echo <span style="color: #8b2252;">"*** Please check out 'master'"</span> ; echo ; exit 1 ; fi
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">is the working tree clean?</span>
+<span style="color: #a0522d;">CLEAN</span> = if [ -n <span style="color: #8b2252;">"$$(git status --porcelain --untracked-files=no --short)"</span> ]; then echo <span style="color: #8b2252;">"Please 'make commit' or 'stash' your changes to:"</span>; git status --short; exit 1 ; fi
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">verify the server is not running and start it on home page</span>
+<span style="color: #0000ff;">.PHONY</span>: start
+<span style="color: #0000ff;">start</span>:
+        if ! emacsclient -s emacsite-server  --eval <span style="color: #8b2252;">'(concat "The Server was Already Running")'</span>; then emacs $(<span style="color: #a0522d;">OPTIONS</span>) --load=lisp/htmlize.el --load=lisp/ox-twbs.el --eval=<span style="color: #8b2252;">"(progn (setq org-confirm-babel-evaluate nil)(setq server-name \"emacsite-server\")(server-start)(find-file \"index.org\")(shell))"</span>; fi;
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">use emacsclient to export an .org file passing reldir ("$(</span><span style="color: #a0522d;">@D</span><span style="color: #b22222;">)") in for use by header.org menu code.</span>
+<span style="color: #0000ff;">%.html</span>: %.org header.org
+        $(<span style="color: #a0522d;">ONMASTER</span>)
+        $(<span style="color: #a0522d;">RM</span>) -f <span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span>.html <span style="color: #0000ff;">$</span><span style="color: #008b8b;">*</span>.html*
+        if ! emacsclient -s emacsite-server --eval <span style="color: #8b2252;">'(progn (setq reldir "$(</span><span style="color: #a0522d;">@D</span><span style="color: #8b2252;">)") (set-buffer (find-file-noselect "</span><span style="color: #8b2252;">$</span><span style="color: #008b8b;">*</span><span style="color: #8b2252;">.org")) (org-twbs-export-to-html) (concat "</span><span style="color: #8b2252;">$</span><span style="color: #008b8b;">*</span><span style="color: #8b2252;">.org" " &gt;&gt;&gt; " "</span><span style="color: #8b2252;">$</span><span style="color: #008b8b;">*</span><span style="color: #8b2252;">.html"))'</span>; then echo; printf <span style="color: #8b2252;">"The Emacs server is not running \n"</span>; printf <span style="color: #8b2252;">"Please type 'make start'  \n"</span>; echo; exit 1; fi
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">stop the server</span>
+<span style="color: #0000ff;">.PHONY</span>: stop
+<span style="color: #0000ff;">stop</span>:
+        <span style="color: #228b22;">-</span>emacsclient -s emacsite-server --eval <span style="color: #8b2252;">'(kill-emacs)'</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">emacsite include dependencies</span>
+<span style="color: #0000ff;">about/gnumake.html</span>: makefile
+<span style="color: #0000ff;">about/menus.html</span>: header.org
+<span style="color: #0000ff;">./markup/code-markup.html</span>: ./markup/code.org ./markup/code-buttons.org
+<span style="color: #0000ff;">./markup/code.html</span>: ./markup/code-buttons.org
+<span style="color: #0000ff;">./markup/headlines-markup.html</span>: ./markup/headlines.org ./markup/headlines-buttons.org
+<span style="color: #0000ff;">./markup/headlines.html</span>: ./markup/headlines-buttons.org
+<span style="color: #0000ff;">./markup/images-markup.html</span>: ./markup/images.org ./markup/images-buttons.org
+<span style="color: #0000ff;">./markup/images.html</span>: ./markup/images-buttons.org
+<span style="color: #0000ff;">./markup/inline-markup.html</span>: ./markup/inline.org ./markup/inline-buttons.org
+<span style="color: #0000ff;">./markup/inline.html</span>: ./markup/inline-buttons.org
+<span style="color: #0000ff;">./markup/lists-markup.html</span>: ./markup/lists.org ./markup/lists-buttons.org
+<span style="color: #0000ff;">./markup/lists.html</span>: ./markup/lists-buttons.org
+<span style="color: #0000ff;">./markup/literal-markup.html</span>: ./markup/literal.org ./markup/literal-buttons.org
+<span style="color: #0000ff;">./markup/literal.html</span>: ./markup/literal-buttons.org
+<span style="color: #0000ff;">./markup/paragraphs-markup.html</span>: ./markup/paragraphs.org ./markup/paragraphs-buttons.org
+<span style="color: #0000ff;">./markup/paragraphs.html</span>: ./markup/paragraphs-buttons.org
+<span style="color: #0000ff;">./markup/tables-markup.html</span>: ./markup/tables.org ./markup/tables-buttons.org
+<span style="color: #0000ff;">./markup/tables.html</span>: ./markup/tables-buttons.org
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">publish to GitHub</span>
+<span style="color: #0000ff;">.PHONY</span>: gh
+<span style="color: #0000ff;">gh</span>:  .gh-update
+        <span style="color: #0000ff;">echo To view the site open</span>: https://$(<span style="color: #a0522d;">GITHUB-USR</span>).github.io/$(<span style="color: #a0522d;">GITHUB-REPO</span>)/
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">view on GitHub</span>
+<span style="color: #0000ff;">.PHONY</span>: view
+<span style="color: #0000ff;">view</span>:  .gh-update
+        <span style="color: #0000ff;">$(</span><span style="color: #0000ff;">BROWSER</span><span style="color: #0000ff;">) https</span>://$(<span style="color: #a0522d;">GITHUB-USR</span>).github.io/$(<span style="color: #a0522d;">GITHUB-REPO</span>)/
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">commit changes</span>
+<span style="color: #a0522d;">MESSAGE</span> ?= $(<span style="color: #a0522d;">shell</span> bash -c <span style="color: #8b2252;">'read -s -p "Commit message: " pwd; echo $$pwd'</span>)
+<span style="color: #0000ff;">.PHONY</span>: commit
+<span style="color: #0000ff;">commit</span>:
+        $(<span style="color: #a0522d;">ONMASTER</span>)
+        git add . ; git commit -m <span style="color: #8b2252;">"$(</span><span style="color: #a0522d;">MESSAGE</span><span style="color: #8b2252;">)"</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">create a GitHub site repo</span>
+<span style="color: #b22222;"># </span><span style="color: #b22222;">use the current directory name for the reponame</span>
+<span style="color: #a0522d;">NEWREPO</span> := $(<span style="color: #a0522d;">notdir</span> $(<span style="color: #a0522d;">CURDIR</span>))
+$(<span style="color: #a0522d;">if</span> $(<span style="color: #a0522d;">DEBUG</span>),$(<span style="color: #a0522d;">warning</span> NEWREPO: $(<span style="color: #a0522d;">NEWREPO</span>)),)
+<span style="color: #0000ff;">.PHONY</span>: repo
+<span style="color: #0000ff;">repo</span>:
+        $(<span style="color: #a0522d;">ONMASTER</span>)
+        $(<span style="color: #a0522d;">CLEAN</span>)
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">save upstream repo reference ...</span>
+        <span style="color: #228b22;">-</span>git remote rename origin upstream
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">... or, forget about it ...</span>
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">-git remote remove origin</span>
+        bash -c <span style="color: #8b2252;">'read -s -p "Please enter your GitHub Username: " username; echo $$username &gt; .username'</span>
+        <span style="color: #0000ff;">curl -i -u $$(&lt; .username) -d </span><span style="color: #0000ff;">"{ \"name\"</span><span style="color: #8b2252;">: \"$(</span><span style="color: #a0522d;">NEWREPO</span><span style="color: #8b2252;">)\", \"homepage\": \"https://$$(&lt; .username).github.io/$(</span><span style="color: #a0522d;">NEWREPO</span><span style="color: #8b2252;">)/\", \"private\": true}"</span> https://api.github.com/user/repos
+        <span style="color: #0000ff;">git remote add origin -f git@$(</span><span style="color: #0000ff;">REMOTE</span><span style="color: #0000ff;">)</span>:$$(&lt; .username)/$(<span style="color: #a0522d;">NEWREPO</span>).git
+        <span style="color: #0000ff;">git push origin -u master</span>:master
+        rm -f .username
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">publish if pages are newer than the GitHub sentinel</span>
+<span style="color: #0000ff;">.gh-update</span>: $(<span style="color: #a0522d;">HTMLxORG</span>)
+        $(<span style="color: #a0522d;">ONMASTER</span>)
+        $(<span style="color: #a0522d;">CLEAN</span>)
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">push</span>
+        <span style="color: #0000ff;">git push origin -u master</span>:master
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">delete previous gh-pages branch</span>
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">revision history for *.html</span>
+        <span style="color: #228b22;">-</span>git branch -D gh-pages
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">make a new gh-pages branch</span>
+        git branch gh-pages
+        git checkout gh-pages
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">check in the pages</span>
+        git add -f $(<span style="color: #a0522d;">HTMLxORG</span>)
+        git commit -m <span style="color: #8b2252;">"Github pages"</span>
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">delete the old gh-pages branch</span>
+        <span style="color: #228b22;">-</span>git push origin :gh-pages
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;">  </span><span style="color: #b22222;">... and push the new one</span>
+        <span style="color: #0000ff;">git push -u origin gh-pages</span>:gh-pages
+<span style="background-color: #ff69b4;">        #</span><span style="color: #b22222;"> </span><span style="color: #b22222;">rewind our local master branch keeping .html files</span>
+        git symbolic-ref HEAD refs/heads/master
+        git rm --cached  $(<span style="color: #a0522d;">HTMLxORG</span>)
+        touch .gh-update
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">remove all pages</span>
+<span style="color: #0000ff;">.PHONY</span>: clean
+<span style="color: #0000ff;">clean</span>:
+        $(<span style="color: #a0522d;">RM</span>) -f $(<span style="color: #a0522d;">HTMLxORG</span>) *.html~
+</pre>
+</div>
+</div>
+</div>
+</div></div></div>
+</body>
+</html>
