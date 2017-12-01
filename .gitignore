@@ -2,3 +2,4 @@
 *.html*
 # the gh-pages sentinen
 .gh-update
+.username
